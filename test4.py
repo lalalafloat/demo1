@@ -57,19 +57,39 @@ def get_template_sequence(lst, lenn):
                 seq.append(candicate[0])
                 break
         #print "seq = {}".format(seq)
-    return seq
+    return seq[1:]
                     
 
 if __name__ == '__main__':
+    '''
     lst = []
     lst.append([1, 3, 5, 4, 10, 6, 10, 10, 12, 7, 8, 9, 11])
     lst.append([1,4,3,5,10,6,10,10,12,7,8,9,11])
     lst.append([4,3,5,10,6,10,10,12,7,8,9,11])
     lst.append([3,5,1,4,6,10,10,10,7,8,9,11])
     lst.append([4,3,5,2,1,10,10,10,7,8,9])
+    '''
+    lst = [
+        [3,6,8,9,10,11,5],
+        [1,2,6,8,7,10,11,5],
+        [3,6,7,8,9,10,5],
+        [3,6,7,8,10,11,5],
+        [3,6,8,9,10,11,5],
+        [1,2,6,7,8,9,10,5],
+        [1,2,6,8,9,7,10,5],
+    ]
     a = [1,2,3]
     #print a[1:]
     b = [1,2,3,5,6,1,2,3]
     #print get_count(a,b)
-    print get_template_sequence(lst,3)
-
+    seq = get_template_sequence(lst,1)
+    print seq
+    flag = 0
+    for ls in lst:
+        if cmp(ls,seq):
+            flag = 1
+            break
+    if flag == 0:
+        print "false"
+    else:
+        print "true"

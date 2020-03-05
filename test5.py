@@ -1,6 +1,7 @@
 #-*- coding:utf-8 -*- #
 import random
 import copy
+import requests
 
 class edge(object):
     def __init__(self, from_id, to_id, next_edge_id, is_required, weight = 1):
@@ -24,7 +25,7 @@ class connect_map(object):
     
     def init_node(self, node_num):
         for i in range(0, node_num + 1, 1): #0号节点作为最终起点
-            self.nod.append(node(0,i))
+            self.nod.append(node(i))
             self.head.append(0)
 
     def addedge(self, from_id, to_id, is_required, weight = 1.0):
@@ -87,7 +88,7 @@ if __name__ == '__main__':
     cm.addedge(4,5,1)
     bad_case = 0
     all_case = 0
-    for i in range(100):
+    for i in range(10):
         am = copy.deepcopy(cm)
         lst = generate_idxs(am, 0, [], 5)
         all_case += 1

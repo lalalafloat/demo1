@@ -14,5 +14,26 @@ def get_prime_list(up):
             lst.append(i)
     return lst
 
+def subseqs(s):
+    if len(s)==1:
+        return [s]
+    else:
+        s1 = subseqs(s[:1])
+        s2 = subseqs(s[1:])
+        #print s1,s2
+        s = s1 + s2
+        if [] not in s:
+            s.append([])
+        for i in s1:
+            for j in s2:
+                if i+j not in s:
+                    s.append(i+j)
+        return s
+                
+
 if __name__ == '__main__':
-    print get_prime_list(100)
+    #print get_prime_list(100)
+    a = [1,2,3,4]
+    b = [5,6]
+    print cross(a,b)
+    print subseqs(a)

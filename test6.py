@@ -121,3 +121,6 @@ if __name__ == '__main__':
             print "{} : {}".format(bad_case, lst)
     print 1.0*bad_case/all_case
     '''
+    '''
+    
+    '''

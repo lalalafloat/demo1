@@ -12,3 +12,4 @@ git push
 但是新建的就不能-am
 push 到远程指定分支命令
 git push -u origin xxxx
+删除一个分支git branch -d xxx

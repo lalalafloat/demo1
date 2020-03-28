@@ -12,7 +12,14 @@ git push
 但是新建的就不能-am
 push 到远程指定分支命令
 git push -u origin xxxx
-删除一个分支git branch -d xxx
+删除一个本地分支git branch -d xxx
 从分支切回主分支并合并的方式：
 git checkout master
 git merge [分支名]
+删除远程分支git push origin --delete 分支名
+查看远程和本地的所有分支git branch -a
+查看远程仓库origin 的信息git remote show origin 
+通过git remote prune origin 移除那些远程仓库不存在的分支 这是参照远程移除本地
+
+如果远程主机删除了某个分支，默认情况下，git pull 在拉取远程分支的时候，不会删除对应的本地分支。以防其他人操作了远程主机，导致git pull不知不觉删除了本地分支。但是，我们可以改变这个行为，加上参数 -p 就会在本地删除远程已经删除的分支
+git pull -p

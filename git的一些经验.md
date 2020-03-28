@@ -13,3 +13,6 @@ git push
 push 到远程指定分支命令
 git push -u origin xxxx
 删除一个分支git branch -d xxx
+从分支切回主分支并合并的方式：
+git checkout master
+git merge [分支名]

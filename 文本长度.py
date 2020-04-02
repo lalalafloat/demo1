@@ -62,12 +62,22 @@ def is_alphabet(uchar):
 
 if __name__ == '__main__':
     #display_font("Paramètres de recherc","tahoma",11)
-    a = "奥迪as3dA4"
+    a = "奥迪 A4，s\n"
     a = a.decode('utf-8')
+    print len(a)
     for i in a:
+        print i
         if is_chinese(i):
             print "中文"
         elif is_alphabet(i):
             print "英文"
         elif is_number(i):
             print "数字"
+        elif i == ' ':
+            print "空格"
+        elif i == '\n':
+            print "换行"
+        elif i == '，':
+            print "中文逗号"
+        elif i == ',':
+            print "英文逗号"

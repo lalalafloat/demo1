@@ -13,3 +13,10 @@ if __name__ == '__main__':
             b = b.group()
             break
     print b
+    c = ['\d+元', '\d+息']
+    for i in c:
+        b = re.search(i, a)
+        if b:
+            b = b.group()
+            break
+    print b
